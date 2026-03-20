@@ -1,26 +1,156 @@
-Body{
-    background: linear-gradient(135deg, #000000 33%,#AA4702 51%,#000000 80% );
-    background-repeat: no-repeat;
-    height: 100vh;
+* {
+    font-family: 'Lora', serif;
 }
 
-.Card_inf{
+Body {
+    background: linear-gradient(135deg, #000000 33%, #AA4702 51%, #000000 80%);
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
+
+#boll_1 {
+    position: absolute;
+    top: 190px;
+    left: 230px;
+    border-radius: 50%;
+    width: 200px;
+    height: 190px;
+    background: linear-gradient(214.56deg, rgba(255, 105, 0, 0.8) 26.46%, rgba(0, 0, 0, 0.8) 46.54%, rgba(0, 19, 255, 0.8) 65.35%);
+    backdrop-filter: blur(2px);
+}
+
+#boll_2 {
+    position: absolute;
+    top: 790px;
+    left: 250px;
+    border-radius: 50%;
+    width: 145px;
+    height: 140px;
+    background: linear-gradient(214.56deg, rgba(255, 105, 0, 0.8) 26.46%, rgba(0, 0, 0, 0.8) 46.54%, rgba(0, 19, 255, 0.8) 65.35%);
+    backdrop-filter: blur(2px);
+}
+
+#boll_3 {
+    position: absolute;
+    top: 1090px;
+    right: 260px;
+    border-radius: 50%;
+    width: 145px;
+    height: 140px;
+    background: linear-gradient(214.56deg, rgba(255, 105, 0, 0.8) 26.46%, rgba(0, 0, 0, 0.8) 46.54%, rgba(0, 19, 255, 0.8) 65.35%);
+    backdrop-filter: blur(2px);
+}
+
+#boll_4 {
+    position: absolute;
+    top: 140px;
+    right: 170px;
+    border-radius: 50%;
+    width: 268.04px;
+    height: 250.82px;
+    background: linear-gradient(214.56deg, rgba(255, 105, 0, 0.8) 29.06%, rgba(0, 0, 0, 0.8) 51.71%, rgba(7, 26, 148, 0.8) 67.95%);
+    opacity: 0.8;
+    transform: rotate(-1.12deg);
+}
+
+.Card_inf {
     display: flex;
     justify-content: center;
     gap: 10px;
+    margin-bottom: -170px;
 }
-#Facil_card{
+
+#Fale_box {
+    padding-bottom: 200px;
+}
+
+#Facil_card {
     display: flex;
     justify-content: center;
     align-items: center;
     color: #FFFFFF;
- }
-#Fale_card{
-    margin-bottom: 90px;
-    background: #FFFFFF;
+    font-size: 96px;
+    margin-right: 300px;
 }
-.Card{
+
+#Fale_card {
+    padding-left: 85px;
+    height: auto;
+    width: 200px;
+    background: #FFFFFF;
+    font-size: 60px;
+    border-radius: 10px;
+}
+
+.Card {
     justify-content: center;
     flex-direction: column;
-    
+}
+
+#box_log {
+    margin-left: 320px;
+    background: rgba(217, 217, 217, 0.3);
+    height: 900px;
+    width: 700px;
+    border-radius: 0px 100px 0px 100px;
+    border: 2px solid (0, 0, 0, 0.39);
+    box-shadow: 0 0 20px black;
+
+}
+
+.Card p {
+    text-align: center;
+    font-size: 48px;
+    color: #FFFFFF;
+}
+
+.NavCad {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.NavCad a {
+    text-decoration: none;
+    color: black;
+}
+
+#Option {
+    background: #FFFFFF;
+    margin-top: 3px;
+    padding-top: 8px;
+    text-align: center;
+    height: 35px;
+    width: 140px;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+#Nav_box {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    border-radius: 30px;
+    height: 50px;
+    width: 400px;
+    background: rgba(217, 217, 217, 0.3);
+}
+
+.Sing_box {
+    display: flex;
+    justify-content: center;
+    padding-top: 500px;
+}
+
+#Singup {
+    color: #FFFFFF;
+    text-decoration: none;
+    background: linear-gradient(200deg, #FF6900 10%, #000000 60%, #3B2197 100%);
+    padding-top: 7px;
+    font-size: 32px;
+    border-radius: 15px;
+    height: 50px;
+    width: 200px;
+    text-align: center;
 }
