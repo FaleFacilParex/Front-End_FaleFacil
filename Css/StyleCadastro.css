@@ -1,0 +1,26 @@
+Body{
+    background: linear-gradient(135deg, #000000 33%,#AA4702 51%,#000000 80% );
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.Card_inf{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+#Facil_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+ }
+#Fale_card{
+    margin-bottom: 90px;
+    background: #FFFFFF;
+}
+.Card{
+    justify-content: center;
+    flex-direction: column;
+    
+}
