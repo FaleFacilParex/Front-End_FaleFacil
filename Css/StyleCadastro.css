@@ -5,21 +5,28 @@
 body {
     background: linear-gradient(135deg, #000000 33%, #AA4702 51%, #000000 80%);
     background-repeat: no-repeat;
-    min-height: 120vh;
+    min-height: 100vh;
     padding-bottom: 200px;
-    margin: 0;
 }
 
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .Card {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     width: 700px;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .Card p {
+    margin-top: 5px;
     text-align: center;
     font-size: 48px;
     color: #FFFFFF;
@@ -41,8 +48,26 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-bottom: -130px;
+    margin-top: -195px;
+    margin-bottom: -220px;
 
+}
+
+.Logo_Parex {
+    margin-top: 200px;
+    margin-left: -300px;
+    margin-bottom: 300px;
+}
+
+
+#Facil_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    margin-left: 280px;
+    font-size: 96px;
+    margin-right: 300px;
 }
 
 #boll_1,
@@ -54,8 +79,8 @@ body {
 
 #boll_1 {
     position: absolute;
-    bottom: 85%;
-    right: 85%;
+    bottom: 75%;
+    right: 80%;
     transform: translate(0, 0);
     border-radius: 50%;
     width: 200px;
@@ -66,8 +91,8 @@ body {
 
 #boll_2 {
     position: absolute;
-    bottom: -8%;
-    left: 90%;
+    bottom: -10%;
+    left: 84%;
     transform: translate(0, 0);
     border-radius: 50%;
     width: 145px;
@@ -79,7 +104,7 @@ body {
 #boll_3 {
     position: absolute;
     bottom: 23%;
-    right: 90%;
+    right: 84%;
     transform: translate(0, 0);
     border-radius: 50%;
     width: 145px;
@@ -92,7 +117,7 @@ body {
 #boll_4 {
     position: absolute;
     top: -5%;
-    right: -20%;
+    right: -15%;
     transform: rotate(-1.12deg);
     border-radius: 50%;
     width: 268.04px;
@@ -102,40 +127,15 @@ body {
     z-index: 0;
 }
 
-.Logo_Parex {
-    margin-left: -300px;
-    margin-bottom: 300px;
-}
 
-#Fale_box {
-    padding-bottom: 200px;
-}
-
-#Facil_card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFFFFF;
-    font-size: 96px;
-    margin-right: 300px;
-}
-
-#Fale_card {
-    padding-left: 85px;
-    height: auto;
-    width: 200px;
-    background: #FFFFFF;
-    font-size: 60px;
-    border-radius: 10px;
-}
 
 
 #box_log {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    height: 900px;
-    width: 700px;
+    height: 600px;
+    width: 600px;
     position: relative;
     z-index: 1;
 
@@ -177,6 +177,7 @@ body {
     border-radius: 30px;
     height: 50px;
     width: 400px;
+    margin-top: -30px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.2);
     background: rgba(255, 255, 255, 0.08);
@@ -218,7 +219,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin-top: 140px;
+    margin-top: 60px;
 
 }
 
@@ -253,6 +254,6 @@ input:focus {
 }
 
 .campo_singup {
-    margin-top: 150px;
+    margin-top: 70px;
     margin-left: 90px;
 }
