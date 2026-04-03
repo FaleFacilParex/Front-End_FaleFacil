@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario FaleFacil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../Css/StyleHistoricoFun.css" />
+    <script src="../JS/Formulario.js"></script>
+  </head>
+  <body>
+    <header class="Container_pes">
+      <h1>RECLAMAÇÕES</h1>
+      <div id="iconPesquisa">
+        <img src="../imgs/IconPesquisa.png" alt="" />
+        <input id="pesquisa" type="text" placeholder="Pesquisar..." />
+      </div>
+      <nav id="filtroBox">
+        <img src="../imgs/FiltroIcon.png" id="Filtroicon" alt="" />
+        <select required class="box_fil">
+          <option disabled selected hidden>FILTRAR</option>
+          <option value="resolvida">Resolvida</option>
+          <option value="pendente">Pendente</option>
+          <option value="nao_resolvida">Não Resolvida</option>
+          <option value="recentes">Recentes</option>
+          <option value="antigas">Antigas</option>
+        </select>
+      </nav>
+    </header>
+    <header class="box_table">
+      <div class="table_box">
+      <table class="table_recl">
+        <tr>
+          <th>ID</th>
+          <th>NOME</th>
+          <th>TITULO</th>
+          <th>PRIORIDADE</th>
+          <th>SETOR</th>
+          <th>DATA</th>
+
+        </tr>
+      </table>        
+      </div>
+    </header>
+    <div id="box_sair">
+    <a href="#" id="but_sair">Sair</a>      
+    </div>
+
+  </body>
+</html>
