@@ -12,7 +12,7 @@ h1 {
     color: black;
     font-style: italic;
     font-size: 65px;
-    font-family: "Crimson Pro", serif;
+
 }
 
 .Container_pes {
@@ -27,7 +27,7 @@ h1 {
     height: 60px;
     border-radius: 50px;
     font-size: 20px;
-    font-family: "Inter", serif;
+
     padding-left: 80px;
     border: black 2px solid;
 }
@@ -62,7 +62,6 @@ h1 {
     height: 40px;
     border-radius: 15px;
     font-size: 20px;
-    font-family: "Montserrat" serif;
 
     margin-top: 10px;
     padding-left: 5px;
@@ -91,7 +90,6 @@ h1 {
     font-style: italic;
     font-size: 22px;
     text-decoration: none;
-    font-family: "Lora" serif;
     color: white;
     border: black 2px solid;
     background-color: #111E64;
@@ -120,4 +118,34 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.Priod{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 40px;
+    margin-right: 20px;
+    
+}
+.Priod img{
+    
+    padding-top: 19px;
+    width: 30px;
+    height: 30px;
+}
+.inf_card{
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+.Box_status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    border: 2px black solid;
+    background-color: yellow;
+    border-radius: 20px;
+    width: 180px;
+    height: 30px;
 }
