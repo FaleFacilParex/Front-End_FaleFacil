@@ -1,0 +1,112 @@
+* {
+  font-family: "Lora", serif;
+}
+body{
+    background-color: #D9D9D9;
+}
+h1{
+    margin-left: 5%;
+    margin-bottom: 5px;
+    color: black;
+    font-style: italic;
+    font-size: 65px;
+
+}
+.Container_pes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#pesquisa {
+  width: 800px;
+  height: 60px;
+  border-radius: 50px;
+  font-size: 20px;
+  padding-left: 80px;
+  border: black 2px solid;
+}
+#iconPesquisa {
+  position: relative;
+  width: 800px;
+}
+#iconPesquisa img {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 30px;
+  height: 30px;
+}
+#filtroBox {
+    margin-right: 650px;
+    position: relative;
+    width: 120px;
+}
+.box_fil {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 110%;
+    height: 40px;
+    border-radius: 15px;
+    font-size: 20px;
+
+
+    margin-top: 10px;
+    padding-left: 5px; 
+    padding-right: 20px; 
+}
+#Filtroicon {
+    position: absolute;
+    left: 95px;
+    top: 55%;
+    transform: translateY(-50%);
+    
+    width: 20px;
+    height: 20px;
+}
+#but_sair{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+    height: 50px;
+    width: 140px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 22px;
+    text-decoration: none;
+
+    color: white;
+    border: black 2px solid;
+    background-color: #111E64;
+}
+#box_sair{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 800px;
+}
+.box_table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+.box_table th{
+  padding-right: 40px;
+  padding-left: 40px;
+  color: white;
+  border: #5B5B5B 1px solid;
+  background-color: #363636;
+}
+.table_box{
+    background-color: #363636;
+    height: 600px;
+}
