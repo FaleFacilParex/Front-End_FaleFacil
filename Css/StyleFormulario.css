@@ -10,7 +10,7 @@ h1{
     color: black;
     font-style: italic;
     font-size: 65px;
-    font-family: "Crimson Pro", serif;
+
 }
 .Container_pes {
   display: flex;
@@ -23,7 +23,6 @@ h1{
   height: 60px;
   border-radius: 50px;
   font-size: 20px;
-  font-family: "Inter", serif;
   padding-left: 80px;
   border: black 2px solid;
 }
@@ -54,7 +53,7 @@ h1{
     height: 40px;
     border-radius: 15px;
     font-size: 20px;
-    font-family: "Montserrat" serif;
+
 
     margin-top: 10px;
     padding-left: 5px; 
@@ -81,7 +80,7 @@ h1{
     font-style: italic;
     font-size: 22px;
     text-decoration: none;
-    font-family: "Lora" serif;
+
     color: white;
     border: black 2px solid;
     background-color: #111E64;
