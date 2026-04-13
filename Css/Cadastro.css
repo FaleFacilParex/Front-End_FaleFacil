@@ -1,0 +1,212 @@
+* {
+    font-family: 'Lora', serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #000000 33%, #AA4702 51%, #000000 80%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+}
+
+.Card_inf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 30px;
+}
+
+#Facil_card {
+    color: #FFFFFF;
+    font-size: 96px;
+    margin: 0;
+    text-align: center;
+}
+
+.Logo_Parex {
+    margin: 0;
+}
+
+.Logo_Parex img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+}
+
+.Card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+}
+
+#box_log {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    width: 100%;
+    max-width: 580px;
+    min-height: 650px;
+    position: relative;
+    z-index: 1;
+    border-radius: 0px 100px 0px 100px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 40px 20px;
+}
+
+.Card p {
+    margin: 0 0 20px 0;
+    text-align: center;
+    font-size: 48px;
+    color: #FFFFFF;
+}
+
+.NavCad {
+    display: flex;
+    justify-content: center;
+}
+
+#Nav_box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 30px;
+    height: 50px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+}
+
+ #Option {
+    text-decoration: none;
+    color: black;
+    background: white;
+    margin-top: 7px;
+    text-align: center;
+    height: 35px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 15px;
+    line-height: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+#Option_re {
+   text-decoration: none;
+    color: black;
+    background: white;
+    margin-top: 7px;
+    text-align: center;
+    height: 35px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 15px;
+    line-height: 35px;
+}
+#Option:hover, #Option_re:hover {
+    background-color: rgb(199, 199, 199);
+}
+
+
+.Inf_cadast {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.campo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.campo label {
+    width: 80px;
+    color: white;
+    font-size: 24px;
+}
+
+.campo input {
+    width: 100%;
+    max-width: 250px;
+    height: 45px;
+    font-size: 20px;
+    border-radius: 12px;
+    border: none;
+    background-color: rgba(217, 217, 217, 1);
+    padding: 0 10px;
+}
+
+#Signup {
+    display: block;
+    margin: 40px auto 0;
+    color: #FFFFFF;
+    text-decoration: none;
+    background: linear-gradient(200deg, #FF6900 10%, #000000 60%, #3B2197 100%);
+    font-size: 28px;
+    border-radius: 15px;
+    height: 55px;
+    width: 200px;
+    text-align: center;
+    line-height: 55px;
+}
+
+#boll_1, #boll_2, #boll_3, #boll_4 {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    backdrop-filter: blur(2px);
+    background: linear-gradient(214.56deg, rgba(255, 105, 0, 0.8) 26.46%, rgba(0, 0, 0, 0.8) 46.54%, rgba(0, 19, 255, 0.8) 65.35%);
+}
+
+#boll_1 { width: 200px; height: 190px; bottom: 75%; right: 80%; }
+#boll_2 { width: 145px; height: 140px; bottom: -10%; left: 84%; }
+#boll_3 { width: 145px; height: 140px; bottom: 23%; right: 84%; }
+#boll_4 { width: 268px; height: 250px; top: -5%; right: -15%; opacity: 0.8; }
+
+@media (max-width: 1024px) {
+    #Facil_card { font-size: 60px; }
+    .Logo_Parex img { max-width: 180px; }
+    .Card_inf { margin-bottom: 20px; }
+    #box_log { border-radius: 30px; }
+    #boll_1, #boll_2, #boll_3, #boll_4 { display: none; }
+}
+
+@media (max-width: 768px) {
+    .campo { flex-direction: column; align-items: flex-start; }
+    .campo label { width: 100%; margin-bottom: 5px; }
+    .campo input { max-width: 100%; }
+    #Nav_box { gap: 10px; padding: 0 10px; }
+    #Option_re, #Option { width: 48%; font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+    #Facil_card { font-size: 32px; }
+    .Card p { font-size: 32px; }
+    #box_log { min-height: auto; padding: 30px 15px; border-radius: 30px; }
+    .campo label { font-size: 18px; }
+    .campo input { height: 40px; font-size: 16px; width: 95%; }
+    #Signup { width: 100%; max-width: 220px; font-size: 22px; }
+}

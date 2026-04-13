@@ -1,14 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./Css/StyleLogin.css">
-    <script src="./JS/Login.js" defer> </script>
+    <title>FaleFacilCadastro</title>
+    <link rel="stylesheet" href="./Css/Login.css">
+    <link rel="shortcut icon" href="/Img/Icon/IconFaleFacil.png" type="image/x-icon">
+    <script src="../JS/Cadastro.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Teste</h1>
-    <h1>Teste 1 = ok</h1>
+    <main class="container">
+        <header class="Card_inf">
+            <h1 id="Facil_card">FALE FÁCIL</h1>
+            <div class="Logo_Parex">
+                <img src="../Img/LogoParex.png" alt="Logo_Parex">
+            </div>
+        </header>
+
+        <div class="Card">
+            <section id="box_log">
+                <p>Login</p>
+                <nav class="NavCad">
+                    <div id="Nav_box">
+                        <a href="./Html/Cadastro.html" id="Option_re">Register</a>
+                        <a href="./index.html" id="Option">Login</a>
+                    </div>
+                </nav>
+
+                <div class="Inf_cadast">
+                    <div class="campo_user">
+                        <div class="campo">
+                            <label for="email">Email:</label>
+                            <input type="text" id="email">
+                        </div>
+                        <div class="campo">
+                            <label for="re">RE:</label>
+                            <input type="text" id="re">
+                        </div>
+                        <div class="campo">
+                            <label for="senha">Senha:</label>
+                            <input type="password" id="senha">
+                        </div>
+                        <a href="./Css/Login.css" class="ForgetPass">Esqueceu a senha?</a>
+                        <div class="campo_singup">
+                            <nav class="Sing_box">
+                                <a id="Signup" href="">Sign Up</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="boll_1"></div>
+            <div id="boll_2"></div>
+            <div id="boll_3"></div>
+            <div id="boll_4"></div>
+        </div>
+    </main>
 </body>
 </html>
