@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario FaleFacil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/StyleHistoricoFun.css" />
+    <script src="../JS/Formulario.js"></script>
+  </head>
+  <body>
+    <header class="Container_pes">
+      <h1>RECLAMAÇÕES</h1>
+      <div id="iconPesquisa">
+        <img src="../Img/Icon/IconPesquisa.png" alt="" />
+        <input id="pesquisa" type="text" placeholder="Pesquisar..." />
+      </div>
+      <nav id="filtroBox">
+        <img src="../Img/Icon/FiltroIcon.png" id="Filtroicon" alt="" />
+        <select required class="box_fil">
+          <option disabled selected hidden>FILTRAR</option>
+          <option value="resolvida">Resolvida</option>
+          <option value="pendente">Pendente</option>
+          <option value="nao_resolvida">Não Resolvida</option>
+        </select>
+      </nav>
+    </header>
+    <div class="recl_poss">
+    <header class="Box_recl">
+        <div class="Priod">
+        <h2>Prioridade:</h2>
+        <img src="../Img/Icon/Star.png" alt="Star">
+        </div>
+
+        <div class="inf_card">
+        <p>Nome:</p>
+        <p>Problema:</p>
+        <p>Descrição:</p>            
+        </div>
+
+
+        <div class="Box_status">
+       <p>Em andamento</p>            
+        </div>
+ 
+    </header>        
+    </div>
+
+    <div id="box_sair">
+    <a href="#" id="but_sair">Sair</a>      
+    </div>
+
+  </body>
+</html>
