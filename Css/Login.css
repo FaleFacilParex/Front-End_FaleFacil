@@ -6,7 +6,7 @@
 body {
     background: linear-gradient(135deg, #000000 33%, #AA4702 51%, #000000 80%);
     background-repeat: no-repeat;
-    min-height: 100vh;
+    min-height: 104vh;
     margin: 0;
     overflow-x: hidden;
 }
@@ -36,16 +36,6 @@ body {
     font-size: 96px;
     margin: 0;
     text-align: center;
-}
-
-.Logo_Parex {
-    margin: 0;
-}
-
-.Logo_Parex img {
-    max-width: 200px;
-    height: auto;
-    display: block;
 }
 
 .Card {
@@ -203,7 +193,7 @@ body {
 
 @media (max-width: 1024px) {
     #Facil_card { font-size: 60px; }
-    .Logo_Parex img { max-width: 180px; }
+    
     .Card_inf { margin-bottom: 20px; }
     #box_log { border-radius: 30px; }
     #boll_1, #boll_2, #boll_3, #boll_4 { display: none; }
