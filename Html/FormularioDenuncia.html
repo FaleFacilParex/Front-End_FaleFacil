@@ -6,19 +6,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../Css/FormuDenun">
+<link rel="stylesheet" href="../Css/FormuDenun.css">
     <title>FormularioDenuncia</title>
 </head>
 <body>
-    <header>
+    <header id="Logo">
         <img src="../Img/Icon/FaleFacil.png" alt="Logo">
     </header>
-    <h2>IINFORMAÇÕES PESSOAIS</h2>
+    <h2>INFORMAÇÕES PESSOAIS</h2>
     <hr>
     <div id="InfoPessoal">
     <label for="nome">Nome:</label>
-    <input type="text" placeholder="Opicional">
-    <img src="../Img/Icon/Info.png" alt="Info">
+    <input id="NomOpic" type="text" placeholder="Opicional">
+    <img class="IconIfon" src="../Img/Icon/Info.png" alt="Info">
     <label for="Setor">Setor:</label>
     <select name="SETOR" id="Setor">
         <option value=""></option>
@@ -40,11 +40,17 @@
     </div>
     <div id="AreaProb">
         <h2>AREA DO PROBLEMA</h2>
+        <hr>
         <label for="Titulo">Titulo: </label>
         <input type="text" placeholder="Tiulo do Problema">
-        <img src="../Img/Icon/Info.png" alt="Info">
+        <img class="IconIfon" src="../Img/Icon/Info.png" alt="Info">
         <label for="Descricao">Descrição: </label>
         <input type="text" placeholder="Insira A Descrição do Problema....">
+    </div>
+    <div class="PossBtn">
+        <button class="BtnForm">Enviar</button>
+        <button class="BtnForm">Ver Historico</button>
+        <button class="BtnForm">Sair</button>
     </div>
 </body>
 </html>
