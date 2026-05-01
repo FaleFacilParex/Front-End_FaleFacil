@@ -1,0 +1,152 @@
+* {
+    font-family: "Lora", serif;
+}
+
+body {
+    background-color: #D9D9D9;
+}
+
+h1 {
+    margin-left: 5%;
+    margin-bottom: 5px;
+    color: black;
+    font-style: italic;
+    font-size: 65px;
+
+}
+
+.Container_pes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#pesquisa {
+    width: 800px;
+    height: 60px;
+    border-radius: 50px;
+    font-size: 20px;
+
+    padding-left: 80px;
+    border: black 2px solid;
+}
+
+#iconPesquisa {
+    position: relative;
+    width: 800px;
+}
+
+#iconPesquisa img {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 30px;
+    height: 30px;
+}
+
+#filtroBox {
+    margin-right: 650px;
+    position: relative;
+    width: 120px;
+}
+
+
+.box_fil {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 110%;
+    height: 40px;
+    border-radius: 15px;
+    font-size: 20px;
+
+    margin-top: 10px;
+    padding-left: 5px;
+    padding-right: 20px;
+}
+
+#Filtroicon {
+    position: absolute;
+    left: 95px;
+    top: 55%;
+    transform: translateY(-50%);
+
+    width: 20px;
+    height: 20px;
+}
+
+#but_sair {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    width: 140px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+    border: black 2px solid;
+    background-color: #111E64;
+}
+
+#box_sair {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 800px;
+}
+
+.Box_recl {
+    margin-top: 10px;
+
+    border: black 2px solid;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+    width: 480px;
+    height: 250px;
+}
+
+.recl_poss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Priod{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 40px;
+    margin-right: 20px;
+    
+}
+.Priod img{
+    
+    padding-top: 19px;
+    width: 30px;
+    height: 30px;
+}
+.inf_card{
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+.Box_status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    border: 2px black solid;
+    background-color: yellow;
+    border-radius: 20px;
+    width: 180px;
+    height: 30px;
+}
