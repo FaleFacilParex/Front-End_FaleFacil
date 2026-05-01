@@ -14,7 +14,7 @@ btnLogin.addEventListener("click", async (event) => {
 
     try {
 
-        const resposta = await axios.get("http://10.110.12.17:1880/usuarios", {
+        const resposta = await axios.get("http://localhost:1880/usuarios", {
             params: {
                 re: re,
                 email: email,
@@ -33,7 +33,7 @@ btnLogin.addEventListener("click", async (event) => {
                 JSON.stringify(usuario[0])
             );
 
-            window.location.href = "./Html/HistoricoFuncionario.html";
+            window.location.href = "./Html/FormularioDenuncia.html";
 
         } else {
             alert("Email ou senha inválidos!");

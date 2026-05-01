@@ -20,7 +20,7 @@ btnSignup.addEventListener("click", async (event) => {
 
      try {
         const resposta = await axios.post(
-            "http://10.110.12.17:1880/usuarios",
+            "http://localhost:1880/usuarios",
             usuario
         );
 
