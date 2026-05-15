@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Css/FormuDenun.css">
     <script src="../JS/Formulario.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Formulario Denuncia</title>
 </head>
 <body>
@@ -17,14 +18,14 @@
 
     <h2>INFORMAÇÕES PESSOAIS</h2>
     <hr>
-
+    <div id="InfoRecla">
     <div id="InfoPessoal">
         <label>Nome:</label>
-        <input id="NomOpic" type="text" placeholder="Opcional">
+        <input id="NomOpic" name="nomeopc" type="text" placeholder="Opcional">
         <img class="IconIfon" src="../Img/Icon/Info.png" alt="Info">
 
         <label>Setor:</label>
-        <input type="text" placeholder="Digite seu setor">
+        <input id="reclasetor" type="text" name="setor" placeholder="Digite seu setor">
         <img class="IconIfon" src="../Img/Icon/Info.png" alt="Info">
     </div>
 
@@ -33,11 +34,11 @@
         <hr>
 
         <label>Área:</label>
-        <input type="text" placeholder="Área do problema ocorrido">
+        <input  id="reclaarea" type="text" name="area" placeholder="Área do problema ocorrido">
         <img class="IconIfon" src="../Img/Icon/Info.png" alt="Info">
 
         <label>Urgência:</label>
-        <input type="text" placeholder="Motivo da urgência">
+        <input id="reclaurge" type="text" name="urgencia" placeholder="Motivo da urgência">
         <img class="IconIfon" src="../Img/Icon/Info.png" alt="Info">
     </div>
 
@@ -46,17 +47,25 @@
         <hr>
 
         <label>Título:</label>
-        <input type="text" placeholder="Título do problema">
+        <input id="reclatitu" type="text" name="tituloDoProblema" placeholder="Título do problema">
         <img class="IconIfon" src="../Img/Icon/Info.png" alt="Info">
 
         <label>Descrição:</label>
-        <textarea placeholder="Insira a descrição do problema..."></textarea>
+        <textarea id="recladesc" name="descricao" placeholder="Insira a descrição do problema..."></textarea>
     </div>
 
     <div class="PossBtn">
-        <button class="BtnForm">Sair</button>
-        <button class="BtnForm">Histórico</button>
-        <button class="BtnForm">Enviar</button>
+        <a href="Cadastro.html">
+        <button class="BtnForm" href="Cadastro.html" >Sair</button>            
+        </a>
+
+        <a href="HistoricoFuncionario.html">
+        <button class="BtnForm">Histórico</button>            
+        </a>
+
+        <button id="submit" class="BtnForm">Enviar</button>
+    </div>
+
     </div>
 
 </body>
