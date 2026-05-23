@@ -1,10 +1,13 @@
 const formulario = document.getElementById("InfoRecla")
 
+const idUsuarioLogado = localStorage.getItem('id_usuario');
+
 document.getElementById('submit').addEventListener('click', async (event) => {
     event.preventDefault();
 
-
+    let user = JSON.pa
     const reclamacao = {
+        id_usuario: idUsuarioLogado,
         nomeopc: document.getElementById('NomOpic').value,
         setor: document.getElementById('reclasetor').value,
         area: document.getElementById('reclaarea').value,
@@ -15,7 +18,7 @@ document.getElementById('submit').addEventListener('click', async (event) => {
     }
     console.log('funciona')
     try{
-        const resposta = await axios.post ('http://10.110.12.77:1880/reclamacoes', reclamacao)
+        const resposta = await axios.post ('http://10.110.12.84:1880/reclamacoes', reclamacao)
         console.log('Resposta do servidor:', resposta.data)
         alert('Dados Enviados com sucesso')
         formulario.reset();

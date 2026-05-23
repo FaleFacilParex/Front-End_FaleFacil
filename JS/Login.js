@@ -3,6 +3,8 @@ const btnLogin = document.getElementById("LogIn");
 btnLogin.addEventListener("click", async (event) => {
     event.preventDefault();
 
+
+   
     const email = document.getElementById("email").value;
     const re = document.getElementById("re").value;
     const senha = document.getElementById("senha").value;
@@ -14,7 +16,7 @@ btnLogin.addEventListener("click", async (event) => {
 
     try {
 
-        const resposta = await axios.get("http://localhost:1880/usuarios", {
+        const resposta = await axios.get("http://10.110.12.84:1880/usuarios", {
             params: {
                 re: re,
                 email: email,
@@ -23,6 +25,8 @@ btnLogin.addEventListener("click", async (event) => {
         });
 
         const usuario = resposta.data;
+
+        localStorage.setItem('id_usuario', usuario[0].id);
 
         if (usuario.length > 0) {
 
