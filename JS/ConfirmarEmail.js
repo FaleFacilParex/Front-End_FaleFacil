@@ -1,60 +1,61 @@
+const URL_BUSCA_USUARIO = 'http://10.110.12.84:1880/usuarios';
 
-    const URL_BUSCA_USUARIO = 'http://10.110.12.84:1880/usuarios';
+const form = document.getElementById('formConfirmeEmail');
+const inputEmail = document.getElementById('email');
+const inputConfirmarEmail = document.getElementById('confirmarEmail');
+const txtStatus = document.getElementById('mensagemStatus');
+const btnConfirmar = document.getElementById('btnConfirmar');
 
-    const form = document.getElementById('formConfirmeEmail');
-    const inputEmail = document.getElementById('email');
-    const inputConfirmarEmail = document.getElementById('confirmarEmail');
-    const txtStatus = document.getElementById('mensagemStatus');
-    const btnConfirmar = document.getElementById('btnConfirmar');
+form.addEventListener('submit', verificarEmailEAvancar);
 
-    form.addEventListener('submit', verificarEmailEAvancar);
+async function verificarEmailEAvancar(evento) {
+    evento.preventDefault();
 
-    async function verificarEmailEAvancar(evento) {
-        evento.preventDefault();
+    const email = inputEmail.value.trim();
+    const emailConfirmacao = inputConfirmarEmail.value.trim();
 
-        const email = inputEmail.value.trim();
-        const emailConfirmacao = inputConfirmarEmail.value.trim();
+    if (email !== emailConfirmacao) {
+        exibirMensagem("Os e-mails digitados não são iguais!", "erro");
+        return;
+    }
 
-        if (email !== emailConfirmacao) {
-            exibirMensagem("Os e-mails digitados não são iguais!", "erro");
-            return;
-        }
+    configurarEstadoCarregamento(true, "Verificando e-mail...");
 
-        configurarEstadoCarregamento(true, "Verificando e-mail...");
+    try {
+        // No Axios, passamos a query string de forma elegante usando a propriedade params
+        const resposta = await axios.get(URL_BUSCA_USUARIO, {
+            params: { email: email }
+        });
 
-        try {
-            // Faz o GET passando o e-mail na URL. O Node-RED agora vai filtrar e trazer SÓ essa pessoa.
-            const respostaBusca = await fetch(`${URL_BUSCA_USUARIO}?email=${email}`);
-            const usuarios = await respostaBusca.json();
+        // O Axios joga o resultado direto mapeado dentro de .data
+        const usuarios = resposta.data;
 
-            if (usuarios && usuarios.length > 0) {
-                // Como o back filtra, pegamos o ID direto do usuário retornado
-                const usuarioEncontrado = usuarios[0];
+        if (usuarios && usuarios.length > 0) {
+            const usuarioEncontrado = usuarios[0];
 
-                alert("E-mail confirmado com sucesso! Redirecionando...");
+            alert("E-mail confirmado com sucesso! Redirecionando...");
 
-                // Manda para a tela de senha passando o ID correto e dinâmico na URL
-                window.location.href = `ConfirmarSenha.html?id=${usuarioEncontrado.id}`;
-            } else {
-                exibirMensagem("Este e-mail não está cadastrado no sistema.", "erro");
-                configurarEstadoCarregamento(false);
-            }
-
-        } catch (erro) {
-            console.error("Erro na busca:", erro);
-            exibirMensagem("Não foi possível conectar ao servidor.", "erro");
+            window.location.href = `ConfirmarSenha.html?id=${usuarioEncontrado.id}`;
+        } else {
+            exibirMensagem("Este e-mail não está cadastrado no sistema.", "erro");
             configurarEstadoCarregamento(false);
         }
-    }
 
-    function exibirMensagem(texto, tipo) {
-        txtStatus.innerText = texto;
-        txtStatus.className = `mensagem-status ${tipo}`;
+    } catch (erro) {
+        console.error("Erro na busca:", erro);
+        exibirMensagem("Não foi possível conectar ao servidor.", "erro");
+        configurarEstadoCarregamento(false);
     }
+}
 
-    function configurarEstadoCarregamento(estaCarregando, texto = "Processando...") {
-        btnConfirmar.disabled = estaCarregando;
-        if (estaCarregando) {
-            exibirMensagem(texto, "carregando");
-        }
+function exibirMensagem(texto, tipo) {
+    txtStatus.innerText = texto;
+    txtStatus.className = `mensagem-status ${tipo}`;
+}
+
+function configurarEstadoCarregamento(estaCarregando, texto = "Processando...") {
+    btnConfirmar.disabled = estaCarregando;
+    if (estaCarregando) {
+        exibirMensagem(texto, "carregando");
     }
+}

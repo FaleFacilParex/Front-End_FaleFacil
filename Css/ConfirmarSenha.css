@@ -76,3 +76,20 @@ button {
 button:hover {
     background-color: #345487;
 }
+
+.btn-voltar {
+    align-self: flex-end;
+    margin-top: 20px;
+    padding: 12px 40px;
+    border-radius: 30px;
+    border: none;
+    background-color: #c9302c;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn-voltar:hover {
+    background-color: #7c0501; 
+}

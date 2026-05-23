@@ -37,29 +37,28 @@ window.addEventListener('DOMContentLoaded', () => {
         configurarEstadoCarregamento(true, "Atualizando senha...");
 
         try {
-            // Faz o PUT para /alterasenha/ID_CERTO_DA_PESSOA
-            const resposta = await fetch(`${URL_ALTERAR_SENHA}/${usuarioId}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                // Envia apenas o objeto { senha: "..." } esperado pelo seu back-end
-                body: JSON.stringify({
-                    senha: senha
-                })
+            // Substituído o fetch por axios.put de forma direta e limpa
+            const resposta = await axios.put(`${URL_ALTERAR_SENHA}/${usuarioId}`, {
+                senha: senha
             });
 
-            if (resposta.ok) {
+            // O Axios valida status de sucesso (200-299). Se chegou aqui, deu certo!
+            if (resposta.status === 200) {
                 alert("Sua senha foi alterada com sucesso!");
                 form.reset();
-                // Opcional: Redirecionar para o login aqui
+                // Opcional: Redirecionar para o login aqui se preferir
                 // window.location.href = "Login.html";
-            } else {
-                exibirMensagem("Erro ao atualizar a senha no servidor.", "erro");
-                configurarEstadoCarregamento(false);
             }
 
         } catch (erro) {
             console.error("Erro no envio:", erro);
-            exibirMensagem("Não foi possível conectar ao servidor.", "erro");
+            
+            // O Axios joga erros de status (ex: 400, 404, 500) direto no catch
+            if (erro.response) {
+                exibirMensagem("Erro ao atualizar a senha no servidor.", "erro");
+            } else {
+                exibirMensagem("Não foi possível conectar ao servidor.", "erro");
+            }
             configurarEstadoCarregamento(false);
         }
     }
