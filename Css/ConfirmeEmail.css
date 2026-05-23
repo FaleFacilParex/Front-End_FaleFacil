@@ -76,3 +76,23 @@ button {
 button:hover {
     background-color: #345487;
 }
+
+.mensagem-status {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.mensagem-status.erro {
+    color: #d9534f; /* Vermelho */
+}
+
+.mensagem-status.sucesso {
+    color: #5cb85c; /* Verde */
+}
+
+.mensagem-status.carregando {
+    color: #5bc0de; /* Azul */
+}
