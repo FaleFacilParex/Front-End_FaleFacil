@@ -8,11 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../JS/ConfirmarEmail.js" defer></script>
 </head>
 <body>
 
     <div class="container">
-        <div class="card">
+        <form class="card" id="formConfirmeEmail">
 
             <img class="imgsFale" src="../imgs/FaleFacil.png" alt="Logo">
 
@@ -20,17 +22,21 @@
 
             <div class="campo">
                 <label>Email:</label>
-                <input type="email">
+                <input type="email" id="email" required>
             </div>
 
             <div class="campo">
                 <label>Confirmar Email:</label>
-                <input type="email">
+                <input type="email" id="confirmarEmail" required>
             </div>
 
-            <button>Confirmar</button>
+            <p id="mensagemStatus" class="mensagem-status"></p>
 
-        </div>
+            <button type="submit" id="btnConfirmar">Confirmar</button>
+
+            <a href="../index.html" class="btn-voltar"> Voltar </a>
+
+        </form>
     </div>
 
 </body>

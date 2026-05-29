@@ -16,7 +16,7 @@ btnLogin.addEventListener("click", async (event) => {
 
     try {
 
-        const resposta = await axios.get("http://10.110.12.84:1880/usuarios", {
+        const resposta = await axios.get("http://10.110.12.83:1880/usuarios", {
             params: {
                 re: re,
                 email: email,

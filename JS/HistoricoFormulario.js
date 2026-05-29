@@ -3,7 +3,7 @@ const idUsuarioLogado = localStorage.getItem('id_usuario');
 
 async function buscarreclamacai() {
     try {
-        const respota = await axios.get('http://10.110.12.84:1880/reclamacoes/' + idUsuarioLogado);
+        const respota = await axios.get('http://10.110.12.83:1880/reclamacoes/' + idUsuarioLogado);
         const denuncia = respota.data;
 
         renderizarCards(denuncia);
@@ -16,7 +16,7 @@ async function buscarreclamacai() {
 
 function renderizarCards(listaDeDenuncias) {
     cardreclamcao.innerHTML = "";
-    
+
     // Correção: de 'legth' para 'length'
     if (!listaDeDenuncias || listaDeDenuncias.length === 0) {
         cardreclamcao.innerHTML = "<p>Nenhuma denúncia cadastrada no momento.</p>";
@@ -25,13 +25,13 @@ function renderizarCards(listaDeDenuncias) {
 
     // Correção: removido o '.array' que não existe
     listaDeDenuncias.forEach(denuncia => {
-        
+
         const cardhtml = `
         <header class="Box_recl">
 
         <div class="inf_card">
           <p>Nome: <span>${denuncia.nome || 'Anônimo'}</span></p>
-          <p>Titulo do Problema: <span>${denuncia.titulo_problema || denuncia.problema}</span></p>
+        <p>Titulo do Problema: <span>${denuncia.tituloDoProblema || denuncia.titulodoproblema || denuncia.titulo_do_problema || 'Sem título'}</span></p>
           <p>Descrição: <span>${denuncia.descricao}</span></p>            
         </div>
 
