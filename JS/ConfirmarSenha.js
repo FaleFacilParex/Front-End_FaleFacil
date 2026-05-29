@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-    const URL_ALTERAR_SENHA = 'http://10.110.12.84:1880/alterasenha';
+    const URL_ALTERAR_SENHA = 'http://10.110.12.83:1880/alterasenha';
 
     const form = document.getElementById('formRedefinirSenha');
     const inputSenha = document.getElementById('novaSenha');

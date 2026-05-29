@@ -1,4 +1,4 @@
-const URL_BUSCA_USUARIO = 'http://10.110.12.84:1880/usuarios';
+const URL_BUSCA_USUARIO = 'http://10.110.12.83:1880/usuarios';
 
 const form = document.getElementById('formConfirmeEmail');
 const inputEmail = document.getElementById('email');
