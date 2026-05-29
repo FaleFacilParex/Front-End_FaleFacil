@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  background: #d9d9d9;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+/* O card cresce sozinho para baixo quando o texto aumenta */
+.card {
+  width: 440px;
+  height: auto; 
+  min-height: 550px; 
+  background: #ffffff; 
+  border-radius: 45px; 
+  border: 2px solid #000000; 
+  padding: 45px 45px 35px 45px; /* Ajustado padding inferior para dar espaço embaixo do botão sair */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.topo h2 {
+  color: #121d5c; 
+  font-size: 28px;
+  margin: 0;
+}
+
+.topo img {
+  width: 35px;
+  height: 35px;
+}
+
+.infos {
+  margin-top: 10px;
+}
+
+.infos p {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #121d5c;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.infos span {
+  font-weight: normal;
+  color: #000000;
+  display: inline-block;
+  width: 100%;
+  margin-top: 6px;
+  word-break: break-word; 
+}
+
+.statusBox {
+  margin-top: auto; 
+  padding-top: 20px;
+}
+
+#status {
+  width: 200px;
+  height: 42px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 10px;
+  border: 2px solid #000000;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+#status option[value="Pendente"] { background-color: #ffffff; color: #000000; }
+#status option[value="Resolvido"] { background-color: #00e676; color: #000000; }
+#status option[value="Não foi possível"] { background-color: #ff5252; color: #ffffff; }
+#status option[value="Em andamento"] { background-color: #ffd600; color: #000000; }
+
+#salvar {
+  margin-top: 30px;
+  width: 100%;
+  height: 55px;
+  border: none;
+  border-radius: 15px;
+  background: #121d5c;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#salvar:hover {
+  background: #1f2f8d;
+}
+
+/* ====================================
+   BOTÃO SAIR CENTRALIZADO EM BAIXO
+==================================== */
+.top_sair {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Centraliza o botão embaixo do salvar */
+  width: 100%;
+}
+
+#but_sair_top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 42px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #121d5c;
+  border: 2px solid black;
+  transition: 0.3s;
+}
+
+#but_sair_top:hover {
+  background-color: #1f2f8d;
+  transform: scale(1.03);
+}

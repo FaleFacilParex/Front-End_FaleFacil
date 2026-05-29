@@ -1,52 +1,168 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario FaleFacil</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../Css/HistoricoAdm.css" />
-    <script src="../JS/Formulario.js"></script>
-  </head>
-  <body>
-    <header class="Container_pes">
-      <h1>RECLAMAÇÕES</h1>
-      <div id="iconPesquisa">
-        <img src="../imgs/IconPesquisa.png" alt="" />
-        <input id="pesquisa" type="text" placeholder="Pesquisar..." />
-      </div>
-      <nav id="filtroBox">
-        <img src="../imgs/FiltroIcon.png" id="Filtroicon" alt="" />
-        <select required class="box_fil">
-          <option disabled selected hidden>FILTRAR</option>
-          <option value="resolvida">Resolvida</option>
-          <option value="pendente">Pendente</option>
-          <option value="nao_resolvida">Não Resolvida</option>
-          <option value="recentes">Recentes</option>
-          <option value="antigas">Antigas</option>
-        </select>
-      </nav>
-    </header>
-    <header class="box_table">
-      <div class="table_box">
-      <table class="table_recl">
-        <tr>
-          <th>ID</th>
-          <th>NOME</th>
-          <th>TITULO</th>
-          <th>PRIORIDADE</th>
-          <th>SETOR</th>
-          <th>DATA</th>
 
-        </tr>
-      </table>        
-      </div>
-    </header>
-    <div id="box_sair">
-    <a href="../index.html" id="but_sair">Sair</a>      
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
+  <title>Histórico ADM</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet"
+        href="../Css/HistoricoAdm.css" />
+
+</head>
+
+<body>
+
+  <!--BOTÃO SAIR TOPO-->
+
+  <div class="top_sair">
+
+    <a href="../index.html"
+       id="but_sair_top">
+
+      Sair
+
+    </a>
+
+  </div>
+
+  <!--HEADER-->
+
+  <header class="Container_pes">
+
+    <h1>RECLAMAÇÕES</h1>
+
+    <!-- PESQUISA -->
+
+    <div id="iconPesquisa">
+
+      <img src="../Img/IconPesquisa.png"
+           alt="Pesquisa" />
+
+      <input id="pesquisa"
+             type="text"
+             placeholder="Pesquisar..." />
+
     </div>
 
-  </body>
+    <!-- FILTRO -->
+
+    <nav id="filtroBox">
+
+      <img src="../Img/FiltroIcon.png"
+           id="Filtroicon"
+           alt="Filtro" />
+
+      <select class="box_fil">
+
+        <option value="">
+          FILTRAR
+        </option>
+
+        <option value="resolvida">
+          Resolvida
+        </option>
+
+        <option value="pendente">
+          Pendente
+        </option>
+
+        <option value="nao_resolvida">
+          Não Resolvida
+        </option>
+
+        <option value="recentes">
+          Recentes
+        </option>
+
+        <option value="antigas">
+          Antigas
+        </option>
+
+      </select>
+
+    </nav>
+
+  </header>
+
+  <!--TABELA -->
+
+  <section class="box_table">
+
+    <div class="table_box">
+
+      <table class="table_recl">
+
+        <thead>
+
+          <tr>
+
+            <th>ID</th>
+
+            <th>NOME</th>
+
+            <th>TÍTULO</th>
+
+            <th>URGÊNCIA</th>
+
+            <th>SETOR</th>
+
+            <th>STATUS</th>
+
+            <th>DATA</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody id="tbodyReclamacoes">
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+  <!--BOTÃO SAIR BAIXO -->
+
+  <div id="box_sair">
+
+    <a href="../index.html"
+       id="but_sair">
+
+      Sair
+
+    </a>
+
+  </div>
+
+  <!--AXIOS-->
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <!-- 
+JS -->
+
+  <script src="../JS/HistoricoAdm.js"></script>
+
+</body>
+
 </html>

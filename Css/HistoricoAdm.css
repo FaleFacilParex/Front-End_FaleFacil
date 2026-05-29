@@ -1,112 +1,336 @@
 * {
   font-family: "Lora", serif;
+  box-sizing: border-box;
 }
-body{
-    background-color: #D9D9D9;
-}
-h1{
-    margin-left: 5%;
-    margin-bottom: 5px;
-    color: black;
-    font-style: italic;
-    font-size: 65px;
 
+body {
+
+  background-color: #D9D9D9;
+
+  margin: 0;
+  padding: 0;
 }
-.Container_pes {
+
+/* =========================
+   BOTÃO SAIR TOPO
+========================= */
+
+.top_sair {
+
+  width: 100%;
+
   display: flex;
-  align-items: center;
+
+  justify-content: flex-end;
+
+  padding: 20px 40px;
+}
+
+#but_sair_top {
+
+  display: flex;
+
   justify-content: center;
+  align-items: center;
+
+  width: 120px;
+  height: 45px;
+
+  border-radius: 15px;
+
+  text-decoration: none;
+
+  color: white;
+
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+
+  background-color: #111E64;
+
+  border: 2px solid black;
+
+  transition: 0.3s;
+}
+
+#but_sair_top:hover {
+
+  background-color: #1c2c86;
+
+  transform: scale(1.03);
+}
+
+/* =========================
+   TITULO
+========================= */
+
+h1 {
+
+  margin-bottom: 10px;
+
+  color: black;
+
+  font-style: italic;
+
+  font-size: 65px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.Container_pes {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
   flex-direction: column;
 }
+
+/* =========================
+   PESQUISA
+========================= */
+
 #pesquisa {
+
   width: 800px;
+
   height: 60px;
+
   border-radius: 50px;
+
   font-size: 20px;
+
   padding-left: 80px;
+
   border: black 2px solid;
+
+  outline: none;
 }
+
 #iconPesquisa {
+
   position: relative;
+
   width: 800px;
 }
+
 #iconPesquisa img {
+
   position: absolute;
+
   left: 25px;
+
   top: 50%;
+
   transform: translateY(-50%);
 
   width: 30px;
+
   height: 30px;
 }
+
+/* =========================
+   FILTRO
+========================= */
+
 #filtroBox {
-    margin-right: 650px;
-    position: relative;
-    width: 120px;
+
+  margin-right: 680px;
+
+  position: relative;
+
+  width: 120px;
 }
+
 .box_fil {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
 
-    width: 110%;
-    height: 40px;
-    border-radius: 15px;
-    font-size: 20px;
+  appearance: none;
 
+  -webkit-appearance: none;
 
-    margin-top: 10px;
-    padding-left: 5px; 
-    padding-right: 20px; 
+  -moz-appearance: none;
+
+  width: 120px;
+
+  height: 40px;
+
+  border-radius: 15px;
+
+  font-size: 18px;
+
+  border: 2px solid black;
+
+  margin-top: 10px;
+
+  padding-left: 10px;
+
+  cursor: pointer;
 }
+
 #Filtroicon {
-    position: absolute;
-    left: 95px;
-    top: 55%;
-    transform: translateY(-50%);
-    
-    width: 20px;
-    height: 20px;
-}
-#but_sair{
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-    height: 50px;
-    width: 140px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 22px;
-    text-decoration: none;
+  position: absolute;
 
-    color: white;
-    border: black 2px solid;
-    background-color: #111E64;
+  left: 90px;
+
+  top: 55%;
+
+  transform: translateY(-50%);
+
+  width: 20px;
+
+  height: 20px;
 }
-#box_sair{
+
+/* =========================
+   TABELA
+========================= */
+
+.box_table {
+
   display: flex;
+
   justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-left: 800px;
+
+  margin-top: 30px;
 }
-.box_table{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-left: 100px;
-}
-.box_table th{
-  padding-right: 40px;
-  padding-left: 40px;
-  color: white;
-  border: #5B5B5B 1px solid;
+
+.table_box {
+
+  width: 90%;
+
   background-color: #363636;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.25);
+
+  max-height: 600px;
+
+  overflow-y: auto;
 }
-.table_box{
-    background-color: #363636;
-    height: 600px;
+
+/* =========================
+   TABLE
+========================= */
+
+.table_recl {
+
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.table_recl thead {
+
+  background-color: #1f1f1f;
+}
+
+.table_recl th {
+
+  color: white;
+
+  padding: 18px;
+
+  font-size: 18px;
+
+  border: 1px solid #5B5B5B;
+
+  text-align: center;
+}
+
+/* =========================
+   LINHAS
+========================= */
+
+.table_recl td {
+
+  color: white;
+
+  padding: 16px;
+
+  text-align: center;
+
+  border: 1px solid #5B5B5B;
+
+  font-size: 16px;
+
+  word-break: break-word;
+}
+
+/* =========================
+   EFEITO HOVER
+========================= */
+
+.table_recl tbody tr {
+
+  transition: 0.3s;
+}
+
+.table_recl tbody tr:hover {
+
+  background-color: #4b4b4b;
+}
+
+/* =========================
+   BOTÃO SAIR BAIXO
+========================= */
+
+#box_sair {
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 25px;
+
+  margin-bottom: 40px;
+}
+
+#but_sair {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  height: 50px;
+
+  width: 140px;
+
+  border-radius: 20px;
+
+  font-weight: bold;
+
+  font-style: italic;
+
+  font-size: 22px;
+
+  text-decoration: none;
+
+  color: white;
+
+  border: black 2px solid;
+
+  background-color: #111E64;
+
+  transition: 0.3s;
+}
+
+#but_sair:hover {
+
+  background-color: #1c2c86;
+
+  transform: scale(1.03);
 }

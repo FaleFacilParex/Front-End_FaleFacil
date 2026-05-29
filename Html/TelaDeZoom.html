@@ -1,11 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Reclamação</title>
+    <link rel="stylesheet" href="../Css/TelaZoom.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    
+
+    <div class="container">
+        <div class="card">
+
+            <div class="infos">
+                <p>
+                    Nome:<br>
+                    <span id="nome"></span>
+                </p>
+
+                <p>
+                    Titulo Problema:<br>
+                    <span id="titulo"></span>
+                </p>
+
+                <p>
+                    Setor:<br>
+                    <span id="setor"></span>
+                </p>
+
+                <p>
+                    Descrição:<br>
+                    <span id="descricao"></span>
+                </p>
+            </div>
+
+            <div class="statusBox">
+                <select id="status">
+                    <option value="Pendente">Status</option>
+                    <option value="Resolvido">Resolvido</option>
+                    <option value="Não foi possível">Não foi possível</option>
+                    <option value="Em andamento">Em andamento</option>
+                </select>
+            </div>
+
+            <button id="salvar">SALVAR ALTERAÇÃO</button>
+
+            <div class="top_sair">
+                <a href="HistoricoAdm.html" id="but_sair_top">Sair</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../JS/TelaDeZoom.js" defer></script>
 </body>
 </html>
