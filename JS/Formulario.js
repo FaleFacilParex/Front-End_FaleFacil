@@ -17,12 +17,11 @@ document.getElementById('submit').addEventListener('click', async (event) => {
     }
     
     try {
-        const resposta = await axios.post('http://10.110.12.83:1880/reclamacoes', reclamacao);
+        const resposta = await axios.post('http://10.110.12.66:1880/reclamacoes', reclamacao);
         console.log('Resposta do servidor:', resposta.data);
         alert('Dados Enviados com sucesso');
         formulario.reset();
     } catch (erro) {
         console.error('Erro na requisição:', erro);
-        alert('Erro ao enviar os dados.');
     }
 });

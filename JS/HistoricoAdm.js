@@ -1,193 +1,108 @@
 const tabelaBody = document.getElementById("tbodyReclamacoes");
-
 const pesquisa = document.getElementById("pesquisa");
-
 const filtro = document.querySelector(".box_fil");
 
-const API_URL = "http://10.110.12.83:1880/reclamacoes";
-
+const API_URL = "http://10.110.12.66:1880/reclamacoes";
 let reclamacoes = [];
 
-// ==========================================
-// BUSCAR RECLAMAÇÕES
-// ==========================================
+
 async function buscarReclamacoes() {
-
+    if (!tabelaBody) return; 
     try {
-
         const response = await axios.get(API_URL);
-
         reclamacoes = response.data;
-
         renderizarTabela(reclamacoes);
-
     } catch (erro) {
-
-        console.error(
-            "Erro ao buscar reclamações:",
-            erro
-        );
-
+        console.error("Erro ao buscar reclamações:", erro);
     }
-
 }
 
-// ==========================================
-// RENDERIZAR TABELA
-// ==========================================
+
 function renderizarTabela(lista) {
+    if (!tabelaBody) return;
+    tabelaBody.innerHTML = "";
 
-  tabelaBody.innerHTML = "";
+    let acumuladorHtml = ""; 
 
-  lista.forEach((r) => {
+    lista.forEach((r) => {
 
-    const dataFormatada =
-      new Date(r.data_criacao)
-      .toLocaleDateString("pt-BR");
+        const titulo = r.tituloDoProblema || r.titulodoproblema || r.titulo_do_problema || "Sem título";
+        const urgencia = r.urgencia || "Não informada";
+        const setor = r.setor || "Geral";
+        const status = r.status || "Pendente";
+        
+        const dataFormatada = r.data_criacao 
+            ? new Date(r.data_criacao).toLocaleDateString("pt-BR") 
+            : "---";
 
-    const linha = `
-      <tr onclick="abrirReclamacao(${r.id})">
+        acumuladorHtml += `
+          <tr onclick="abrirReclamacao(${r.id})" style="cursor: pointer;">
+            <td>${r.id}</td>
+            <td>${r.nome || "Não informado"}</td>
+            <td>${titulo}</td>
+            <td>${urgencia}</td>
+            <td>${setor}</td>
+            <td>${status}</td>
+            <td>${dataFormatada}</td>
+          </tr>
+        `;
+    });
 
-        <td>${r.id}</td>
-
-        <td>${r.nome || "Não informado"}</td>
-
-        <td>${r.tituloDoProblema}</td>
-
-        <td>${r.urgencia}</td>
-
-        <td>${r.setor}</td>
-
-        <td>${r.status}</td>
-
-        <td>${dataFormatada}</td>
-
-      </tr>
-    `;
-
-    tabelaBody.innerHTML += linha;
-
-  });
-
+    tabelaBody.innerHTML = acumuladorHtml;
 }
-// ==========================================
-// PESQUISA
-// ==========================================
-pesquisa.addEventListener("input", () => {
 
-    const valor =
-        pesquisa.value.toLowerCase();
 
-    const filtradas =
-        reclamacoes.filter((r) => {
+if (pesquisa) {
+    pesquisa.addEventListener("input", () => {
+        const valor = pesquisa.value.toLowerCase();
 
-            return (
+        const filtradas = reclamacoes.filter((r) => {
+            const nome = (r.nome || "").toLowerCase();
+            const titulo = (r.tituloDoProblema || r.titulodoproblema || r.titulo_do_problema || "").toLowerCase();
+            const setor = (r.setor || "").toLowerCase();
+            const status = (r.status || "").toLowerCase();
 
-                (r.nome || "")
-                    .toLowerCase()
-                    .includes(valor)
-
-                ||
-
-                r.tituloDoProblema
-                    .toLowerCase()
-                    .includes(valor)
-
-                ||
-
-                r.setor
-                    .toLowerCase()
-                    .includes(valor)
-
-                ||
-
-                r.status
-                    .toLowerCase()
-                    .includes(valor)
-
-            );
-
+            return nome.includes(valor) || titulo.includes(valor) || setor.includes(valor) || status.includes(valor);
         });
 
-    renderizarTabela(filtradas);
+        renderizarTabela(filtradas);
+    });
+} else {
+    console.warn("Aviso: Elemento com id 'pesquisa' não foi encontrado nesta página.");
+}
 
-});
+if (filtro) {
+    filtro.addEventListener("change", () => {
+        const valor = filtro.value;
+        let lista = [...reclamacoes];
 
-// ==========================================
-// FILTRO
-// ==========================================
-filtro.addEventListener("change", () => {
+        // STATUS
+        if (valor === "resolvida" || valor === "pendente" || valor === "nao_resolvida") {
+            lista = lista.filter((r) => {
+                return (r.status || "").toLowerCase() === valor.toLowerCase();
+            });
+        }
 
-    const valor = filtro.value;
+        // RECENTES
+        if (valor === "recentes") {
+            lista.sort((a, b) => new Date(b.data_criacao) - new Date(a.data_criacao));
+        }
 
-    let lista = [...reclamacoes];
+        // ANTIGAS
+        if (valor === "antigas") {
+            lista.sort((a, b) => new Date(a.data_criacao) - new Date(b.data_criacao));
+        }
 
-    // ==========================
-    // STATUS
-    // ==========================
-    if (
-        valor === "resolvida" ||
-        valor === "pendente" ||
-        valor === "nao_resolvida"
-    ) {
-
-        lista = lista.filter((r) => {
-
-            return (
-                r.status.toLowerCase()
-                === valor.toLowerCase()
-            );
-
-        });
-
-    }
-
-    // ==========================
-    // RECENTES
-    // ==========================
-    if (valor === "recentes") {
-
-        lista.sort((a, b) => {
-
-            return (
-                new Date(b.data_criacao)
-                - new Date(a.data_criacao)
-            );
-
-        });
-
-    }
-
-    // ==========================
-    // ANTIGAS
-    // ==========================
-    if (valor === "antigas") {
-
-        lista.sort((a, b) => {
-
-            return (
-                new Date(a.data_criacao)
-                - new Date(b.data_criacao)
-            );
-
-        });
-
-    }
-
-    renderizarTabela(lista);
-
-});
-
-// ==========================================
-// INICIAR
-// ==========================================
+        renderizarTabela(lista);
+    });
+} else {
+    console.warn("Aviso: Elemento com a classe '.box_fil' não foi encontrado nesta página.");
+}
 
 
 function abrirReclamacao(id) {
-
-  window.location.href =
-  `TelaDeZoom.html?id=${id}`;
-
+    window.location.href = `TelaDeZoom.html?id=${id}`;
 }
 
-buscarReclamacoes();
+
+window.addEventListener("DOMContentLoaded", buscarReclamacoes);

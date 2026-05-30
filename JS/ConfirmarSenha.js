@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-    const URL_ALTERAR_SENHA = 'http://10.110.12.83:1880/alterasenha';
+    const URL_ALTERAR_SENHA = 'http://10.110.12.66:1880/alterasenha';
 
     const form = document.getElementById('formRedefinirSenha');
     const inputSenha = document.getElementById('novaSenha');
@@ -8,11 +8,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const txtStatus = document.getElementById('mensagemStatus');
     const btnConfirmar = document.getElementById('btnConfirmar');
 
-    // Pesca o ID dinâmico da URL (?id=X)
     const urlParams = new URLSearchParams(window.location.search);
     const usuarioId = urlParams.get('id');
 
-    // Se não tiver ID na URL, bloqueia o botão por segurança
+
     if (!usuarioId) {
         exibirMensagem("Erro: ID de usuário inválido. Volte e confirme o e-mail.", "erro");
         if (btnConfirmar) btnConfirmar.disabled = true;
@@ -37,23 +36,20 @@ window.addEventListener('DOMContentLoaded', () => {
         configurarEstadoCarregamento(true, "Atualizando senha...");
 
         try {
-            // Substituído o fetch por axios.put de forma direta e limpa
+
             const resposta = await axios.put(`${URL_ALTERAR_SENHA}/${usuarioId}`, {
                 senha: senha
             });
 
-            // O Axios valida status de sucesso (200-299). Se chegou aqui, deu certo!
             if (resposta.status === 200) {
                 alert("Sua senha foi alterada com sucesso!");
                 form.reset();
-                // Opcional: Redirecionar para o login aqui se preferir
-                // window.location.href = "Login.html";
+
             }
 
         } catch (erro) {
             console.error("Erro no envio:", erro);
-            
-            // O Axios joga erros de status (ex: 400, 404, 500) direto no catch
+           
             if (erro.response) {
                 exibirMensagem("Erro ao atualizar a senha no servidor.", "erro");
             } else {

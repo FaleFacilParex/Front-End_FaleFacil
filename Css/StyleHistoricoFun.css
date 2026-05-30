@@ -12,8 +12,106 @@ h1 {
     color: black;
     font-style: italic;
     font-size: 65px;
-
 }
+
+/* CONTAINER PRINCIPAL DOS CARDS */
+.recl_poss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px; /* Cria um espaçamento uniforme entre um card e outro */
+    width: 100%;
+    max-width: 550px; /* 👈 Altere aqui para definir a largura máxima ideal do card */
+    margin: 20px auto; /* Centraliza a listagem inteira na tela */
+}
+
+/* O CARD EM SI (Totalmente dinâmico e sincronizado) */
+.Box_recl {
+    width: 100%; /* O card ocupa até o limite do max-width definido acima */
+    border: black 2px solid;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+    padding: 20px; /* Padding interno para afastar o texto das bordas */
+    
+    /* ESSENCIAIS PARA O ALINHAMENTO E DINÂMICA */
+    box-sizing: border-box; /* Garante que as bordas/paddings não estourem a largura */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço ordenado entre o cabeçalho, o texto e o status */
+}
+
+/* TEXTOS DENTRO DO CARD */
+.inf_card {
+    width: 100%;
+    margin: 0; /* Zerado para evitar desalinhamentos inesperados */
+    
+    /* ESSENCIAIS PARA SINCRONIA DO TEXTO */
+    word-break: break-word; /* Força quebra de palavras gigantes */
+    overflow-wrap: anywhere; /* Garante funcionamento em todos os navegadores */
+}
+
+.inf_card p {
+    margin: 8px 0;
+    font-size: 18px;
+    color: black;
+}
+
+/* BOTÃO DE STATUS */
+/* ... Mantenha o restante do seu CSS igual acima ... */
+
+/* BOTÃO DE STATUS (Base limpa sem cor fixa) */
+.Box_status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px black solid;
+    border-radius: 20px;
+    width: 180px;
+    height: 35px;
+    margin-left: 0; 
+    align-self: flex-start; 
+    transition: background-color 0.3s ease;
+}
+
+.Box_status p {
+    margin: 0;
+    font-weight: bold;
+}
+
+/* CLASSES DINÂMICAS DE CORES PARA OS STATUS */
+.status_pendente {
+    background-color: #f1c40f; /* Amarelo */
+    color: black;
+}
+
+.status_resolvida {
+    background-color: #2ecc71; /* Verde */
+    color: white;
+}
+
+.status_nao_resolvida {
+    background-color: #e74c3c; /* Vermelho */
+    color: white;
+}
+
+/* ... Mantenha o restante do seu CSS igual abaixo ... */
+/* TOPO DO CARD (ÍCONES/PRIORIDADE) */
+.Priod {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 40px;
+    width: 100%;
+}
+
+.Priod img {
+    padding-top: 0;
+    width: 30px;
+    height: 30px;
+}
+
+/* --- ELEMENTOS DE PESQUISA E MENUS (Mantidos e organizados) --- */
 
 .Container_pes {
     display: flex;
@@ -28,9 +126,9 @@ h1 {
     height: 60px;
     border-radius: 50px;
     font-size: 20px;
-
     padding-left: 80px;
     border: black 2px solid;
+    box-sizing: border-box;
 }
 
 #iconPesquisa {
@@ -43,7 +141,6 @@ h1 {
     left: 25px;
     top: 50%;
     transform: translateY(-50%);
-
     width: 30px;
     height: 30px;
 }
@@ -54,17 +151,14 @@ h1 {
     width: 120px;
 }
 
-
 .box_fil {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-
     width: 110%;
     height: 40px;
     border-radius: 15px;
     font-size: 20px;
-
     margin-top: 10px;
     padding-left: 5px;
     padding-right: 20px;
@@ -75,26 +169,8 @@ h1 {
     left: 95px;
     top: 55%;
     transform: translateY(-50%);
-
     width: 20px;
     height: 20px;
-}
-
-#but_sair {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 50px;
-    width: 140px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 22px;
-    text-decoration: none;
-    color: white;
-    border: black 2px solid;
-    background-color: #111E64;
 }
 
 #box_sair {
@@ -105,49 +181,18 @@ h1 {
     margin-left: 800px;
 }
 
-.Box_recl {
-    margin-top: 10px;
-
-    border: black 2px solid;
-    border-radius: 30px;
-    background-color: #FFFFFF;
-    width: 480px;
-    height: 250px;
-}
-
-.recl_poss {
+#but_sair {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-}
-
-.Priod{
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    gap: 40px;
-    margin-right: 20px;
-    
-}
-.Priod img{
-    
-    padding-top: 19px;
-    width: 30px;
-    height: 30px;
-}
-.inf_card{
-    margin-bottom: 30px;
-    margin-left: 20px;
-}
-.Box_status{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
-    border: 2px black solid;
-    background-color: yellow;
+    height: 50px;
+    width: 140px;
     border-radius: 20px;
-    width: 180px;
-    height: 30px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+    border: black 2px solid;
+    background-color: #111E64;
 }

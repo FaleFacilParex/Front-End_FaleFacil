@@ -2,65 +2,63 @@
 <html lang="pt-br">
 
 <head>
-
   <meta charset="UTF-8" />
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Histórico ADM</title>
 
-  <!-- GOOGLE FONTS -->
-  <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
-        rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet"
-        href="../Css/HistoricoAdm.css" />
-
+  <link rel="stylesheet" href="../Css/HistoricoAdm.css" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../JS/HistoricoAdm.js" defer></script>
 </head>
 
 <body>
 
-  <!--BOTÃO SAIR TOPO-->
-
   <div class="top_sair">
-
-    <a href="../index.html"
-       id="but_sair_top">
-
-      Sair
-
-    </a>
-
+    <a href="../index.html" id="but_sair_top">Sair</a>
   </div>
 
-  <!--HEADER-->
-
   <header class="Container_pes">
-
     <h1>RECLAMAÇÕES</h1>
 
-    <!-- PESQUISA -->
-
     <div id="iconPesquisa">
-
-      <img src="../Img/IconPesquisa.png"
-           alt="Pesquisa" />
-
-      <input id="pesquisa"
-             type="text"
-             placeholder="Pesquisar..." />
-
+      <img src="../Img/IconPesquisa.png" alt="Pesquisa" />
+      <input id="pesquisa" type="text" placeholder="Pesquisar..." />
     </div>
 
-  </body>
-  
+    <div id="filtroBox">
+      <select class="box_fil">
+        <option value="">Filtrar por...</option>
+        <option value="pendente">Pendentes</option>
+        <option value="resolvida">Resolvidas</option>
+        <option value="nao_resolvida">Não Resolvidas</option>
+        <option value="recentes">Mais Recentes</option>
+        <option value="antigas">Mais Antigas</option>
+      </select>
+      <img src="../Img/FiltroIcon.png" id="Filtroicon" alt="Filtro" />
+    </div>
+  </header> <div class="box_table">
+    <main class="tabela_container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Título</th>
+            <th>Urgência</th>
+            <th>Setor</th>
+            <th>Status</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyReclamacoes">
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+</body>
 </html>

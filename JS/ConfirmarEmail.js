@@ -1,4 +1,4 @@
-const URL_BUSCA_USUARIO = 'http://10.110.12.83:1880/usuarios';
+const URL_BUSCA_USUARIO = 'http://10.110.12.66:1880/usuarios';
 
 const form = document.getElementById('formConfirmeEmail');
 const inputEmail = document.getElementById('email');
@@ -22,12 +22,11 @@ async function verificarEmailEAvancar(evento) {
     configurarEstadoCarregamento(true, "Verificando e-mail...");
 
     try {
-        // No Axios, passamos a query string de forma elegante usando a propriedade params
+  
         const resposta = await axios.get(URL_BUSCA_USUARIO, {
             params: { email: email }
         });
 
-        // O Axios joga o resultado direto mapeado dentro de .data
         const usuarios = resposta.data;
 
         if (usuarios && usuarios.length > 0) {

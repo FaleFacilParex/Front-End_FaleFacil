@@ -1,5 +1,5 @@
 const API_URL =
-"http://10.110.12.83:1880/reclamacoes";
+"http://10.110.12.66:1880/reclamacoes";
 
 const params =
 new URLSearchParams(window.location.search);
@@ -9,9 +9,7 @@ Number(params.get("id"));
 
 let reclamacao = null;
 
-// ==============================
-// BUSCAR RECLAMAÇÃO
-// ==============================
+
 async function buscarReclamacao() {
 
   try {
@@ -26,7 +24,6 @@ async function buscarReclamacao() {
     reclamacao =
     lista.find(r => Number(r.id) === id);
 
-    // NÃO ENCONTROU
     if (!reclamacao) {
 
       alert("Reclamação não encontrada");
@@ -47,9 +44,8 @@ async function buscarReclamacao() {
 
 }
 
-// ==============================
-// PREENCHER DADOS
-// ==============================
+
+
 function preencherDados() {
 
   document.getElementById("nome")
@@ -78,9 +74,7 @@ function preencherDados() {
 
 }
 
-// ==============================
-// ALTERAR STATUS
-// ==============================
+
 document.getElementById("salvar")
 .addEventListener("click", async () => {
 
@@ -119,5 +113,5 @@ document.getElementById("salvar")
 
 });
 
-// ==============================
+
 buscarReclamacao();
